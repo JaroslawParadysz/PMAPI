@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{1E6D2CDB-383A-4ECF-8859-FCA0C6A78161}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.SqlServer", "Infrastructure.SqlServer\Infrastructure.SqlServer.csproj", "{AD24F602-D132-439F-8663-74272E1C2E04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1E6D2CDB-383A-4ECF-8859-FCA0C6A78161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6D2CDB-383A-4ECF-8859-FCA0C6A78161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E6D2CDB-383A-4ECF-8859-FCA0C6A78161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD24F602-D132-439F-8663-74272E1C2E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD24F602-D132-439F-8663-74272E1C2E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD24F602-D132-439F-8663-74272E1C2E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD24F602-D132-439F-8663-74272E1C2E04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
