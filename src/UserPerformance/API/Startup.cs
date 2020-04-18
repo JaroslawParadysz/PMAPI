@@ -17,6 +17,8 @@ namespace API
 {
     public class Startup
     {
+        private readonly string MigrationAssemblyName = "Migrations";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,7 +32,8 @@ namespace API
             services.AddDbContext<UserPerformanceDbContext>(options =>
             {
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnectionString"));
+                    Configuration.GetConnectionString("DefaultConnectionString"),
+                    x => x.MigrationsAssembly(MigrationAssemblyName));
             });
             services.AddControllers();
         }

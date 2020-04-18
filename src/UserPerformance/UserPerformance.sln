@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.SqlServer", "Infrastructure.SqlServer\Infrastructure.SqlServer.csproj", "{AD24F602-D132-439F-8663-74272E1C2E04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{F7D5491C-7FA1-42CD-8879-E65A58F67C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "Migrations\Migrations.csproj", "{4EB12BB7-3448-42FB-A5EA-590150ABE688}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{AD24F602-D132-439F-8663-74272E1C2E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD24F602-D132-439F-8663-74272E1C2E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD24F602-D132-439F-8663-74272E1C2E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D5491C-7FA1-42CD-8879-E65A58F67C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D5491C-7FA1-42CD-8879-E65A58F67C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D5491C-7FA1-42CD-8879-E65A58F67C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D5491C-7FA1-42CD-8879-E65A58F67C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB12BB7-3448-42FB-A5EA-590150ABE688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB12BB7-3448-42FB-A5EA-590150ABE688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB12BB7-3448-42FB-A5EA-590150ABE688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB12BB7-3448-42FB-A5EA-590150ABE688}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
