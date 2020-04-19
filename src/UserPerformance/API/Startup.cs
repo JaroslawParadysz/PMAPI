@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.LinksBuildings;
+using Domain;
 using Infrastructure.SqlServer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,7 +37,12 @@ namespace API
                     Configuration.GetConnectionString("DefaultConnectionString"),
                     x => x.MigrationsAssembly(MigrationAssemblyName));
             });
+
             services.AddControllers();
+
+            services.AddScoped<IUserErrorsRepository, UserErrorsRepository>();
+
+            services.AddTransient<ILinksBuilder, LinksBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

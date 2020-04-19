@@ -4,14 +4,16 @@ using Infrastructure.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MigrationsAPI.Migrations
+namespace Migrations.Migrations
 {
     [DbContext(typeof(UserPerformanceDbContext))]
-    partial class UserPerformanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200419052659_NullAbleUpdatedTimeColumn")]
+    partial class NullAbleUpdatedTimeColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
