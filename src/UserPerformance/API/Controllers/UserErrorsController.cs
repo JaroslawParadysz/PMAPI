@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using API.InputDto;
 using API.LinksBuildings;
 using Domain;
 using Domain.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -27,7 +25,7 @@ namespace API.Controllers
         public IUserErrorsRepository _userErrorRepository { get; private set; }
         public ILinksBuilder _linksBuilder { get; private set; }
 
-        [HttpPost(Name = "CreateUser")]
+        [HttpPost(Name = "CreateUserError")]
         public async Task<IActionResult> CreateUser(UserErrorForCreationDto userErrorDto)
         {
             UserError userError = UserError.Create(

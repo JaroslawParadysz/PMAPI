@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "919cb530-3fd5-4fc3-8687-c26527c7973f",
+		"name": "LocalhostUserPerformance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateUserError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"CreatedTime\":\"2020-04-19T10:25:43.511Z\",\n\t\"Notes\":\"Test error\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44335/api/usererrors",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44335",
+					"path": [
+						"api",
+						"usererrors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserError",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44335/api/usererrors/b14ce6ad-d5ff-45b2-7813-08d7e422bc09",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44335",
+					"path": [
+						"api",
+						"usererrors",
+						"b14ce6ad-d5ff-45b2-7813-08d7e422bc09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserError",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44335/api/usererrors/b14ce6ad-d5ff-45b2-7813-08d7e422bc09",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44335",
+					"path": [
+						"api",
+						"usererrors",
+						"b14ce6ad-d5ff-45b2-7813-08d7e422bc09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUserError",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44335/api/UserErrors/b14ce6ad-d5ff-45b2-7813-08d7e422bc09",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44335",
+					"path": [
+						"api",
+						"UserErrors",
+						"b14ce6ad-d5ff-45b2-7813-08d7e422bc09"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
