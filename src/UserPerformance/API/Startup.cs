@@ -43,11 +43,18 @@ namespace API
             services.AddScoped<IUserErrorsRepository, UserErrorsRepository>();
 
             services.AddTransient<ILinksBuilder, LinksBuilder>();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options =>
+                options.WithOrigins("http://localhost:8081")
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
