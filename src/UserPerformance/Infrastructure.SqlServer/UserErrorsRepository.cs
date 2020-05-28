@@ -1,6 +1,8 @@
 ﻿using Domain;
 using Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +27,11 @@ namespace Infrastructure.SqlServer
         public UserError GetUserError(Guid userErrorId)
         {
             return _userPerformanceDbContext.UserErrors.SingleOrDefault(x => x.UserErrorId == userErrorId);
+        }
+
+        public async Task<IEnumerable<UserError>> GetUserErrors()
+        {
+            return await _userPerformanceDbContext.UserErrors.ToListAsync();
         }
 
         public async Task SaveUserErrors(UserError userError)

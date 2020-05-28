@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Domain
@@ -10,5 +11,6 @@ namespace Domain
         UserError GetUserError(Guid userErrorId);
         Task UpdateUserError(UserError userError);
         Task DeleteUserError(Guid userErrorId);
+        Task<IEnumerable<UserError>> GetUserErrors();
     }
 }

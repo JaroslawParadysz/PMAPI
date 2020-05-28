@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using API.InputDto;
@@ -56,23 +58,27 @@ namespace API.Controllers
             {
                 return StatusCode((int)HttpStatusCode.NotFound);
             }
-            IList<LinkDto> links = _linksBuilder
-            .AddLink(
-                Url.Link("GetUserError", new { userError.UserErrorId }),
-                "self",
-                "GET")
-            .AddLink(
-                Url.Link("DeleteUserError", new { userError.UserErrorId }),
-                "delete-user-error",
-                "DELETE")
-            .AddLink(
-                Url.Link("UpdateUserError", new { userError.UserErrorId }),
-                "update-user-error",
-                "PUT")
-            .Build();
+            IList<LinkDto> links = CreateLinksForGetMethod(userError);
             var dto = userError.ShapeData(null);
             ((IDictionary<string, object>)dto).Add("links", links);
             return Ok(dto);
+        }
+
+        [HttpGet(Name = "GetUserErrors")]
+        public async Task<IActionResult> GetUserErrors()
+        {
+            IEnumerable<UserError> userErrors = await _userErrorRepository.GetUserErrors();
+            IList<ExpandoObject> result = new List<ExpandoObject>();
+
+            foreach (UserError userError in userErrors)
+            {
+                IList<LinkDto> links = CreateLinksForGetMethod(userError);
+                ExpandoObject expandoObject = userError.ShapeData(null);
+                ((IDictionary<string, object>)expandoObject).Add("links", links);
+                result.Add(expandoObject);
+            }
+
+            return Ok(result);
         }
 
         [HttpPut("{userErrorId}", Name = "UpdateUserError")]
@@ -114,6 +120,24 @@ namespace API.Controllers
         {
             await _userErrorRepository.DeleteUserError(userErrorId);
             return Ok();
+        }
+
+        private IList<LinkDto> CreateLinksForGetMethod(UserError userError)
+        {
+            return _linksBuilder
+            .AddLink(
+                Url.Link("GetUserError", new { userError.UserErrorId }),
+                "self",
+                "GET")
+            .AddLink(
+                Url.Link("DeleteUserError", new { userError.UserErrorId }),
+                "delete-user-error",
+                "DELETE")
+            .AddLink(
+                Url.Link("UpdateUserError", new { userError.UserErrorId }),
+                "update-user-error",
+                "PUT")
+            .Build();
         }
     }
 }
